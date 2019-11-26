@@ -19,18 +19,6 @@
     -webkit-touch-callout: none;
 }
 
-/* .first {
-    width: 100%;
-    display: block;
-    position: fixed;
-    z-index: 999;
-    top: 0px;
-    height: 13%;
-
-    font-family: "Lato";
-    font-size: 1.6em;
-} */
-
 .container{
     margin-top:1%;
     wid
@@ -42,13 +30,25 @@
     padding: 0.5em 1em !important;
     color: white;
     font-family: "Lato";
-    font-size: 1.6em;
+    font-size: 1.5em;
+    height: 100%;
+}
 
+.marca{
+    font-size: 0.7em !important;
+}
+
+.waiting{
+    background-color: #a5c05b;
+    text-shadow: #a5c05b 1px 1px 0;
+    padding: 0.5em 1em !important;
+    color: white;
+    font-family: "Lato";
+    font-size: 1.3em;
+    height: 100%;
 }
 
 .comercio{
-    text-align: right;
-    margin: 1em;
     font-family: "Lato";
     color: #a5c05b;
 }
@@ -59,13 +59,25 @@
 }
 
 aside{
-    background: #DDDEDE;
+    /* background: #DDDEDE; */
     height: 100%;
     padding-right: 1%;
 }
 
+.bordeabajo{
+    border-bottom: 1px solid #7ba4ab;
+}
 
 .nombreplato{
 
     text-align: left;
+}
+
+.detalleplato{
+    font-size: 0.8em;
+}
+
+.sumaplato{
+    background: #a5c05b !important;
+    border: none !important;
 }

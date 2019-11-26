@@ -52,39 +52,58 @@
 </head>
 <body>
     <div class="container">
-        <header class="row"> 
-            <div class="col titulo">
-                <i class="fa fa-utensils"></i>
-                Waiting
+        <header class="row titulo" > 
+            <div class="col col-3 justify-content-between comercio"> <!-- imagen del restaurant-->
+                <img src="img/avatars/laslilas.jpg" style="height: 80px;">
+            </div>
+            <div class="col col-6 align-self-center">
+                <div class="row justify-content-start">Restaurante Las Lilas</div>
+            </div>
+            <div class="col col-3 waiting align-self-center">
+                <div class="row justify-content-end">
+                    <div class="col align-self-center marca">
+                        <i class="fa fa-utensils"></i>
+                        Waiting
+                    </div>
+                </div>
             </div>
         </header>
-        <section class="row comercio">
-            <div class="col col-9 align-self-end">Restaurant Las Lilas</div>
-            <div class="col col-3 align-self-end">
-                <img src="img/icons/icon-512x512.png" style="width:30%;">
-            </div>
+
+
+
+        <section class="row">
+            
         </section>
         <section class="menu row">
-            <main class="col-9 col-sm-9">
+            <main class="col-10 col-sm-10 justify-content-start">
                     <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#comidas" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
                         Comidas
                     </button>        
                     <div class="collapse show" id="comidas">
                     <div class="card card-body">
-                        <div class="row">
+                        <div class="row justify-content-start">
                                 <div class="col col-10 plato " >
-                                        <button class="btn btn-block nombreplato" type="button" data-toggle="collapse" data-target="#plato1" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
-                                            Pato a la naranja
-                                        </button>
-                                        <div class="collapse" id="plato1">Un pato de 1.5 kg.
-                                                5 naranjas
-                                                Un vaso de Cointreau
-                                                1 cucharada sopera de vinagre
-                                                1 cucharadita de mantequilla
-                                                Un vaso de caldo de ave
-                                                2 cucharaditas de harina de maíz
-                                                una pizca de sal y pimienta negra.</div>
-                                        <button class="btn btn-primary">Boton</button>
+                                    <div class="row justify-content-around">
+                                        <div class="col col-2 align-self-center">
+                                            <button class="btn btn-primary row justify-content-start sumaplato">
+                                                <i class="fa fa-plus-square"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col col-10">
+                                            <button class="btn btn-block nombreplato text-left" type="button" data-toggle="collapse" data-target="#plato1" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                                                Pato a la naranja
+                                            </button>
+                                            <div class="collapse detalleplato" id="plato1">Un pato de 1.5 kg.
+                                                    5 naranjas
+                                                    Un vaso de Cointreau
+                                                    1 cucharada sopera de vinagre
+                                                    1 cucharadita de mantequilla
+                                                    Un vaso de caldo de ave
+                                                    2 cucharaditas de harina de maíz
+                                                    una pizca de sal y pimienta negra.
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col col-2 precio align-self-center">
                                     $34.5
@@ -93,8 +112,8 @@
                     </div>
                 
             </main>
-            <aside class="col-3 col-sm-3 align-self-center">
-                <p>Tu pedido actual:</p>
+            <aside class="col-2 col-sm-2 align-self-center">
+                <p class="bordeabajo">Tu pedido actual:</p>
             </aside>
         </section>
        
