@@ -48,7 +48,9 @@
 
 .comercio{
     text-align: right;
-    margin: 2em;
+    margin: 1em;
+    font-family: "Lato";
+    color: #a5c05b;
 }
 
 .categoria{
@@ -59,4 +61,11 @@
 aside{
     background: #DDDEDE;
     height: 100%;
+    padding-right: 1%;
+}
+
+
+.nombreplato{
+
+    text-align: left;
 }
