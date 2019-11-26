@@ -27,7 +27,7 @@
 .titulo{
     background-color: #a5c05b;
     text-shadow: #a5c05b 1px 1px 0;
-    padding: 0.5em 1em !important;
+    padding: 0.5em 0.5em !important;
     color: white;
     font-family: "Lato";
     font-size: 1.5em;
@@ -41,21 +41,17 @@
 .waiting{
     background-color: #a5c05b;
     text-shadow: #a5c05b 1px 1px 0;
-    padding: 0.5em 1em !important;
+    padding: 0.5em 0.5em !important;
     color: white;
     font-family: "Lato";
     font-size: 1.3em;
     height: 100%;
 }
 
-.comercio{
+.nombrecomercio{
     font-family: "Lato";
-    color: #a5c05b;
-}
-
-.categoria{
-    padding: 0.5em 1em !important;
-    background: #DDDEDE;
+    font-size: 1.0em;
+    color: #FFFFFF;
 }
 
 aside{
@@ -69,7 +65,7 @@ aside{
 }
 
 .nombreplato{
-
+    font-size: large;
     text-align: left;
 }
 
@@ -80,4 +76,8 @@ aside{
 .sumaplato{
     background: #a5c05b !important;
     border: none !important;
+}
+
+.tit{
+    font-size: 1em;
 }
