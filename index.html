@@ -42,91 +42,61 @@
     <link href="img/icons-ios/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 
     
-    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="apple-mobile-web-app-title" content="Waiting"> -->
+    <meta name="apple-mobile-web-app-title" content="Waiting">
 
 </head>
 <body>
     <div class="container-fluid">
         <header class="row titulo"> 
-            <div class="col col-4 justify-content-between" style="height: 80px;"> <!-- imagen del restaurant-->
-                <img class="img-fluid img-thumbnail" src="img/avatars/laslilas.jpg">
-            </div>
-            <div class="col col-5 align-self-center">
+            <div class="col-8 col-xs-8 col-md-9 align-self-center">
                 <div class="row justify-content-start">
                     <div class="col">
-                            <p class="h3 nombrecomercio">
-                                <i class="fa fa-utensils"></i>
-                                Las Lilas<br>
-                                <small class="h6">Restaurant</small>
-                            </p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col col-3 waiting align-self-center">
-                <div class="row">
-                    <div class="col">
-                        <p class="h6 text-right">
-                            Waiting <br>
-                            <small class="text-muted">Maitre suite.</small>
+                        <p class="h4 nombrecomercio">
+                            <i class="fa fa-utensils"></i>
+                            Las Lilas <small class="text-muted">Restaurant</small>
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="col-4 col-xs-4 col-md-3 mr-0 titulo text-right"> <!-- imagen del restaurant-->
+                <img class="img-fluid img-responsive mr-0" src="img/avatars/laslilas.jpg" style="max-height:80px;">
             </div>
         </header>
 
 
 
         <section class="row">
-            
+            <div class="w-100"> </div>
+            <div class="w-100"> </div>
+            <div class="w-100"> </div>
         </section>
         <section class="menu row">
             <main class="col-10 col-sm-10 justify-content-start">
                     <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#comidas" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
                         Comidas
                     </button>        
-                    <div class="collapse show" id="comidas">
-                    <div class="card card-body">
-                        <div class="row justify-content-start">
-                                <div class="col col-10 plato " >
-                                    <div class="row justify-content-around">
-                                        <div class="col col-2 align-self-center">
-                                            <button class="btn btn-primary row justify-content-start sumaplato">
-                                                <i class="fa fa-plus-square"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col col-10">
-                                            <button class="btn btn-block nombreplato text-left" type="button" data-toggle="collapse" data-target="#plato1" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
-                                                Pato a la naranja
-                                            </button>
-                                            <div class="collapse detalleplato" id="plato1">Un pato de 1.5 kg.
-                                                    5 naranjas
-                                                    Un vaso de Cointreau
-                                                    1 cucharada sopera de vinagre
-                                                    1 cucharadita de mantequilla
-                                                    Un vaso de caldo de ave
-                                                    2 cucharaditas de harina de maíz
-                                                    una pizca de sal y pimienta negra.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-2 precio align-self-center">
-                                    $34.5
-                                </div>
-                            </div>
-                    </div>
-                
+                    <div class="collapse show" id="comidas"></div>
             </main>
             <aside class="col-2 col-sm-2 align-self-center">
-                <p class="bordeabajo text-center tit">Tu pedido actual:</p>
+                <p class="bordeabajo text-center rt">Tu pedido actual:</p>
             </aside>
         </section>
        
     </div>
-    <div class="modal-footer">Footer</div>
+    <div class="modal-footer">
+            <div class="col col-3 waiting align-self-center">
+                <div class="row">
+                    <div class="col">
+                        <p class="h6 text-right" id="prueba">
+                            Waiting <br>
+                            <small class="text-muted">Maitre suite.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/app.js"></script>

@@ -27,7 +27,7 @@
 .titulo{
     background-color: #a5c05b;
     text-shadow: #a5c05b 1px 1px 0;
-    padding: 0.5em 0.5em !important;
+    padding: 0.1em 0.1em !important;
     color: white;
     font-family: "Lato";
     font-size: 1.5em;
@@ -65,8 +65,8 @@ aside{
 }
 
 .nombreplato{
-    font-size: large;
-    text-align: left;
+    font-size: 3.2vh;
+    padding: 0.5em 0em !important;
 }
 
 .detalleplato{
@@ -78,6 +78,16 @@ aside{
     border: none !important;
 }
 
-.tit{
-    font-size: 1em;
+.rt {
+        font-size: 2.2vh;
+}
+
+.precio {
+    font-size: 2.8vh;
+    padding: 0px !important;
+}
+
+.btn:focus, .btn:active{
+    outline: none !important;
+    box-shadow: none !important;
 }
