@@ -20,7 +20,7 @@
     <link rel="manifest" href="manifest.json">
 
     <!-- Android -->
-    <meta name="theme-color" content="#3498db">
+    <meta name="theme-color" content="#232122">
 
     <!-- IOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,104 +47,58 @@
 </head>
 <body>
         <!-- Titulo -->
-        <span class="first"> 
-            <span id="salir-btn" class="fa fa-sign-out-alt out oculto animated fadeIn"></span>
-            <span id="titulo">
-                <i class="fa fa-user"></i>
-                Seleccione Personaje
-            </span>
-            <span id="nuevo-btn" class="fa fa-pen-square new oculto animated fadeIn fast"></span>
-        </span>
-        <!-- Fin Titulo -->
-
-        <!-- Modal -->
-        <div id="modal" class="oculto">
-            <img id="modal-avatar" src="img/avatars/spiderman.jpg">
-
-            <span class="first"> 
-                <span id="titulo-modal">Nuevo mensaje</span>
-                <span id="cancel-btn" class="fa fa-times"></span>
-            </span>
-            
-
-            <div class="nuevo-mensaje">
-                <textarea id="txtMensaje" placeholder="Nuevo mensaje..." rows="5"></textarea>
-            </div>
-
-            
-            <!-- boton de enviar -->
-
-            <div id="post-btn" class="fab">
-                <i class="fa fa-paper-plane"></i>
-            </div>
-
-            <div id="post-btn" class="fab-marker">
-                <i class="fa fa-map-marker-alt"></i>
-            </div>
-
-            <div id="post-btn" class="fab-photo">
-                <i class="fa fa-image"></i>
-            </div>
-
-        </div>
-        <!-- Fin Modal -->
-
-
-        <!-- Seleccion de personaje -->
-        <div id="seleccion" class="seleccion animated fadeIn fast" align="center">
-        
-            <div>
-                <img data-user="spiderman" src="img/avatars/spiderman.jpg" alt="spiderman" class="seleccion-avatar">
-            </div>
-
-            <div>
-                <img data-user="ironman" src="img/avatars/ironman.jpg" alt="ironman" class="seleccion-avatar">
-            </div>
-
-            <div>
-                <img data-user="wolverine" src="img/avatars/wolverine.jpg" alt="wolverine" class="seleccion-avatar">
-            </div>
-
-            <div>
-                <img data-user="thor" src="img/avatars/thor.jpg" alt="thor" class="seleccion-avatar">
-            </div>
-
-            <div>
-                <img data-user="hulk" src="img/avatars/hulk.jpg" alt="hulk" class="seleccion-avatar">
-            </div>
-
-        </div>
-
-        <!-- FIN Seleccion de personaje -->
-
-        <!-- Lista de mensajes -->
-        <ul id="timeline" class="timeline oculto">
-            
-            <!-- Mensaje -->
-            <li class="animated fadeIn fast">
-                <div class="avatar">
-                    <img src="img/avatars/spiderman.jpg">
-                </div>
-                <div class="bubble-container">
-                    <div class="bubble">
-                        <h3>@spiderman</h3>
-                        <br/>
-                        La tía May, hizo unos panqueques en forma de ironman!
+        <div class="container-fluid">
+            <header class="row titulo"> 
+                <div class="col-8 col-xs-8 col-md-9 align-self-center">
+                    <div class="row justify-content-start">
+                        <div class="col">
+                            <p class="h4 nombrecomercio">
+                                <i class="fa fa-utensils"></i>
+                                Las Lilas <small class="text-muted">Restaurant</small>
+                            </p>
+                        </div>
                     </div>
-                    
-                    <div class="arrow"></div>
                 </div>
-            </li>
-            <!-- Fin del mensaje -->
-
-        </ul>
-        <!-- Fin Lista de mensajes -->
-
-
-      
+                <div class="col-4 col-xs-4 col-md-3 mr-0 titulo text-right"> <!-- imagen del restaurant-->
+                    <img class="img-fluid img-responsive mr-0" src="img/avatars/laslilas.jpg" style="max-height:80px;">
+                </div>
+            </header>
     
-        <script src="js/libs/jquery.js"></script>
-        <script src="js/app.js"></script>
+    
+    
+            <section class="row">
+                <div class="w-100"> </div>
+                <div class="w-100"> </div>
+                <div class="w-100"> </div>
+            </section>
+            <section class="menu row">
+                <main class="col-10 col-sm-10 justify-content-start">
+                        <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#comidas" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                            Comidas
+                        </button>        
+                        <div class="collapse show" id="comidas"></div>
+                </main>
+                <aside class="col-2 col-sm-2 align-self-center">
+                    <p class="bordeabajo text-center rt">Tu pedido actual:</p>
+                </aside>
+            </section>
+           
+        </div>
+        <div class="modal-footer">
+                <div class="col col-3 waiting align-self-center">
+                    <div class="row">
+                        <div class="col">
+                            <p class="h6 text-right" id="prueba">
+                                Waiting <br>
+                                <small class="text-muted">Maitre suite.</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/app.js"></script>
     
 </body>
 </html>
