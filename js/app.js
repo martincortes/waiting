@@ -42,6 +42,14 @@ var menu = {
                 // imagen: file
             },
             {
+                id: 65656,
+                categoria: ["postre"], 
+                plato: "Brownie",
+                ingredientes: "Dulce de leche y chocolate amargo",
+                precio: 76.5,
+                // imagen: file
+            },
+            {
                 id: 3456,
                 categoria: ["entrada"], 
                 plato: "Ensalada César",
@@ -49,7 +57,7 @@ var menu = {
                 precio: 23.6,
                 // imagen: file
             }
-            
+
         ]
 };
 
