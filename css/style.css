@@ -23,19 +23,6 @@
     margin-top:1%;
 }
 
-.titulo{
-    background-color: #a5c05b;
-    text-shadow: #a5c05b 1px 1px 0;
-    padding: 0.1em 0em !important;
-    color: white;
-    font-family: "Lato";
-    font-size: 1.5em;
-    height: 100px;
-    position: absolute;
-    top:0px;
-    width: 100%;
-}
-
 .marca{
     font-size: 0.7em !important;
 }
@@ -107,4 +94,17 @@ aside{
 .menu{
   position:absolute;
   top: 120px;
+}
+
+.titulo{
+  background-color: #a5c05b;
+  text-shadow: #a5c05b 1px 1px 0;
+  padding: 0.1em 0em !important;
+  color: white;
+  font-family: "Lato";
+  font-size: 1.5em;
+  height: 80px;
+  position: absolute;
+  top:0px;
+  width: 100%;
 }
