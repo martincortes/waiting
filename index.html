@@ -46,9 +46,8 @@
 
 </head>
 <body>
-        <!-- Titulo -->
         <div class="container-fluid">
-            <header class="row titulo pt-3"> 
+            <header class="row titulo pt-3 w-100"> 
                 <div class="col-8 col-xs-8 col-md-9 align-self-center">
                     <div class="row justify-content-start">
                         <div class="col">
@@ -59,33 +58,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 col-xs-4 col-md-3 mr-0 titulo text-right"> <!-- imagen del restaurant-->
+                <div class="col-4 col-xs-4 col-md-3 mr-0 text-right"> <!-- imagen del restaurant-->
                     <img class="img-fluid img-responsive mr-0" src="img/avatars/laslilas.jpg" style="max-height:80px;">
                 </div>
             </header>
-    
-    
-    
+        
             <section class="row">
-                <div class="w-100"> </div>
-                <div class="w-100"> </div>
-                <div class="w-100"> </div>
             </section>
-            <section class="menu row">
+            <section class="menu row w-100">
                 <main class="col-10 col-sm-10 justify-content-start">
                         <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#comidas" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
                             Comidas
                         </button>        
                         <div class="collapse show" id="comidas"></div>
+                        <!-- <section class="footermenu" style="height: 200px; background: blue;"></section> -->
                 </main>
                 <aside class="col-2 col-sm-2 align-self-center">
                     <p class="bordeabajo text-center rt">Tu pedido actual:</p>
                 </aside>
             </section>
-           
-        </div>
-        <div class="modal-footer">
-                <div class="col col-3 waiting align-self-center">
+            <div class="w-100 footer" >
+                <div class="col-12 align-self-center">
                     <div class="row">
                         <div class="col">
                             <p class="h6 text-right" id="prueba">
@@ -95,7 +88,9 @@
                         </div>
                     </div>
                 </div>
+            </div>    
         </div>
+        
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
             <script src="js/app.js"></script>
