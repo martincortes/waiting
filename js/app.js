@@ -40,6 +40,14 @@ var menu = {
                 ingredientes: "Flan y dulce de leche",
                 precio: 46,
                 // imagen: file
+            },
+            {
+                id: 3456,
+                categoria: ["entrada"], 
+                plato: "Ensalada César",
+                ingredientes: "Verdes con croutones y salsa césar de la casa",
+                precio: 23.6,
+                // imagen: file
             }
         ]
 };
