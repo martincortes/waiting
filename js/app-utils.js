@@ -49,10 +49,10 @@ function agregaPlatoAComanda(id){
 
     var contenido = `
     <div class="platoencomanda row w-100 justify-content-around">
-        <div class="col-5" id="plato${ plato.id }">
+        <div class="col-5 col-md-8" id="plato${ plato.id }">
         ${ plato.plato }
         </div>
-        <div class="col-5 precio align-self-center text-right rt" >
+        <div class="col-5 col-md-4 precio align-self-center text-right rt" >
             $${ plato.precio }
         </div>
     </div>
@@ -60,4 +60,6 @@ function agregaPlatoAComanda(id){
     totalcomanda = totalcomanda + plato.precio;
     $("#comanda").append(contenido);
     $("#totalcomanda").html('$'+totalcomanda+'.-');
+
+    $("#aside").removeClass('d-none');
 }
