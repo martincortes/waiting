@@ -1,9 +1,9 @@
 {
-    "short_name": "Twittor",
-    "name": "Twittor para héroes",
+    "short_name": "Waiting",
+    "name": "Waiting - Maitre suite",
     "start_url": "index.html",
-    "background_color": "#3498db",
-    "theme_color": "#3498db",
+    "background_color": "#232122",
+    "theme_color": "#A5C05B",
     "display": "standalone",
     "orientation": "portrait",
     "icons": [
