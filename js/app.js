@@ -49,6 +49,7 @@ var menu = {
                 precio: 23.6,
                 // imagen: file
             }
+            
         ]
 };
 
