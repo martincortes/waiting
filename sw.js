@@ -1,78 +1,69 @@
-
-const CACHE_STATIC_NAME  = 'static-v6';
-const CACHE_DYNAMIC_NAME = 'dynamic-v1';
-const CACHE_INMUTABLE_NAME = 'inmutable-v1';
-
-const CACHE_DYNAMIC_LIMIT = 50;
+// imports
+importScripts('js/sw-utils.js');
 
 
-function limpiarCache( cacheName, numeroItems ) {
+const STATIC_CACHE    = 'static-v4';
+const DYNAMIC_CACHE   = 'dynamic-v2';
+const INMUTABLE_CACHE = 'inmutable-v1';
 
 
-    caches.open( cacheName )
-        .then( cache => {
+const APP_SHELL = [
+    // '/',
+    'index.html',
+    'css/style.css',
+    'img/favicon.ico',
+    'img/avatars/hulk.jpg',
+    'img/avatars/ironman.jpg',
+    'img/avatars/spiderman.jpg',
+    'img/avatars/thor.jpg',
+    'img/avatars/wolverine.jpg',
+    'js/app.js',
+    'js/sw-utils.js'
+];
 
-            return cache.keys()
-                .then( keys => {
-                    
-                    if ( keys.length > numeroItems ) {
-                        cache.delete( keys[0] )
-                            .then( limpiarCache(cacheName, numeroItems) );
-                    }
-                });
-
-            
-        });
-}
-
+const APP_SHELL_INMUTABLE = [
+    'https://fonts.googleapis.com/css?family=Quicksand:300,400',
+    'https://fonts.googleapis.com/css?family=Lato:400,300',
+    'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
+    'css/animate.css',
+    'js/libs/jquery.js'
+];
 
 
 
 self.addEventListener('install', e => {
 
 
-    const cacheProm = caches.open( CACHE_STATIC_NAME )
-        .then( cache => {
+    const cacheStatic = caches.open( STATIC_CACHE ).then(cache => 
+        cache.addAll( APP_SHELL ));
 
-            return cache.addAll([
-                '/',
-                '/index.html',
-                '/css/style.css',
-                '/img/main.jpg',
-                '/js/app.js',
-                '/img/no-img.jpg',
-                '/pages/offline.html'
-            ]);
-
-        
-        });
-
-    const cacheInmutable = caches.open( CACHE_INMUTABLE_NAME )
-            .then( cache => cache.add('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'));
+    const cacheInmutable = caches.open( INMUTABLE_CACHE ).then(cache => 
+        cache.addAll( APP_SHELL_INMUTABLE ));
 
 
-    e.waitUntil( Promise.all([cacheProm, cacheInmutable]) );
+
+    e.waitUntil( Promise.all([ cacheStatic, cacheInmutable ])  );
 
 });
 
 
 self.addEventListener('activate', e => {
 
-
     const respuesta = caches.keys().then( keys => {
 
         keys.forEach( key => {
 
-            // static-v4
-            if (  key !== CACHE_STATIC_NAME && key.includes('static') ) {
+            if (  key !== STATIC_CACHE && key.includes('static') ) {
+                return caches.delete(key);
+            }
+
+            if (  key !== DYNAMIC_CACHE && key.includes('dynamic') ) {
                 return caches.delete(key);
             }
 
         });
 
     });
-
-
 
     e.waitUntil( respuesta );
 
@@ -81,45 +72,29 @@ self.addEventListener('activate', e => {
 
 
 
+self.addEventListener( 'fetch', e => {
 
-self.addEventListener('fetch', e => {
 
+    const respuesta = caches.match( e.request ).then( res => {
 
-    // 2- Cache with Network Fallback
-    const respuesta = caches.match( e.request )
-        .then( res => {
+        if ( res ) {
+            return res;
+        } else {
 
-            if ( res ) return res;
+            return fetch( e.request ).then( newRes => {
 
-            // No existe el archivo
+                return actualizaCacheDinamico( DYNAMIC_CACHE, e.request, newRes );
 
-            return fetch( e.request ).then( newResp => {
-
-                caches.open( CACHE_DYNAMIC_NAME )
-                    .then( cache => {
-                        cache.put( e.request, newResp );
-                        limpiarCache( CACHE_DYNAMIC_NAME, 50 );
-                    });
-
-                return newResp.clone();
-            })
-            .catch( err => {
-
-                if ( e.request.headers.get('accept').includes('text/html') ) {
-                    return caches.match('/pages/offline.html');
-                }
-
-            
             });
 
+        }
 
-        });
-
+    });
 
 
 
     e.respondWith( respuesta );
 
-
-
 });
+
+
