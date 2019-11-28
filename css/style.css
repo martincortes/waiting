@@ -97,8 +97,8 @@ aside{
 .footer {
   position: fixed !important;
   height: 40px !important;
-  bottom: 0px !important;
-  left: -10px;
+  bottom: -10px !important;
+  left: 0px;
   width: 100% !important;
   background: #232122 !important;
   color: #FFFFFF;
