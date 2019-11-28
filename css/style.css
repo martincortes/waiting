@@ -46,7 +46,7 @@
 aside{
     /* background: #DDDEDE; */
     height: 100%;
-    padding-right: 1%;
+    padding: 1% 0%;
 }
 
 .bordeabajo{
@@ -58,6 +58,10 @@ aside{
     padding: 0.5em 0em !important;
 }
 
+.platoencomanda{
+  font-size: 2.5vh;
+}
+
 .detalleplato{
     font-size: 0.8em;
 }
@@ -66,13 +70,13 @@ aside{
     background: #a5c05b !important;
     border: none !important;
 }
-
+ 
 .rt {
     font-size: 2.2vh;
-}
+} 
 
 .precio {
-    font-size: 2.8vh;
+    font-size: 2.5vh;
     padding: 0px !important;
 }
 
@@ -89,6 +93,13 @@ aside{
   width: 100% !important;
   background: #232122 !important;
   color: #FFFFFF;
+}
+
+.footerhiden{
+  display: block;
+  height: 40px !important;
+  width: 100%;
+  background: #a5c05b;
 }
 
 .menu{

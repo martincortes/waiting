@@ -2,9 +2,9 @@
 
 function htmlPlato( plato ){
 
-    var contenido = `<div class="card card-body">
+    var contenido = `<div class="card card-body py-1">
     <div class="row justify-content-start">
-        <div class="col-10 col-md-9 plato " >
+        <div class="col-10 col-md-9 plato">
             <div class="row justify-content-around">
                 <div class="col-1 col-xs-1 col-sm-1 col-md-2 align-self-center text-center" >
                     <button class="btn btn-primary row justify-content-start sumaplato" plato="${plato.id}">
@@ -45,21 +45,34 @@ function getPlato (id){
 }
 
 function agregaPlatoAComanda(id){
+
+    if(jQuery.inArray(id, platosencomanda) === -1){
+        var respuesta = 'OK';
+    }else{
+        var respuesta = 'EXISTE';
+    }
+
     var plato = getPlato(id);
 
     var contenido = `
-    <div class="platoencomanda row w-100 justify-content-around">
-        <div class="col-5 col-md-8" id="plato${ plato.id }">
+    <div class="platoencomanda row w-100 justify-content-center m-0 p-0 rt">
+        <div class="col-1 col-md-0 m-0 p-0"></div>
+        <div class="col-8 col-md-8 pr-2" id="plato${ plato.id }">
         ${ plato.plato }
         </div>
-        <div class="col-5 col-md-4 precio align-self-center text-right rt" >
+        <div class="col-3 col-md-3 precio align-self-center text-center m-0 p-0 rt">
             $${ plato.precio }
         </div>
     </div>
     `;
     totalcomanda = totalcomanda + plato.precio;
     $("#comanda").append(contenido);
-    $("#totalcomanda").html('$'+totalcomanda+'.-');
+    $("#totalcomanda").html('$'+totalcomanda.toFixed(2)+'.-');
 
-    $("#aside").removeClass('d-none');
+    //falta el if
+    $("#aside-body").removeClass('d-none');
+
+    platosencomanda.push(id);
+
+    return respuesta;
 }

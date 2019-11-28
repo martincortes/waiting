@@ -13,10 +13,8 @@ if ( navigator.serviceWorker ) {
     navigator.serviceWorker.register( swLocation );
 }
 
-// $.getScript('js/app-utils.js', function() {
-//     console.log('Utiles cargados.');
-// });
 var totalcomanda = 0;
+var platosencomanda = new Array();
 
 var menu = {
         "comercio": "Las Lilas",
@@ -75,7 +73,27 @@ $.each(menu.menuitems, function(i, item) {
 $(".sumaplato").click(function(){
     // alert("Busco "+$(this).attr("plato"));
     var plato = getPlato($(this).attr("plato"));
-    agregaPlatoAComanda(plato.id);
+    var rta = agregaPlatoAComanda(plato.id);
+    
+    switch(rta){
+        case 'OK':
+            var mensaje = 'Plato agregado a la comanda [<b>$'+totalcomanda+'.-</b>]';
+            mdtoast(mensaje,{
+                duration: 1000, 
+                init: false,
+                type: mdtoast.SUCCESS
+            });
+        break;
+        case 'EXISTE':
+                var mensaje = 'El plato fue agregado por segunda vez [<b>$'+totalcomanda+'.-</b>]';
+                mdtoast(mensaje,{
+                    duration: 2000, 
+                    // interaction: true,
+                    init: false,
+                    type: mdtoast.INFO
+                });
+        break;
+    }
 });
 
 // $("#prueba").append("asldasd");
