@@ -23,11 +23,13 @@
 //    		scannedTextMemo.value = scannedText;
 //		alert(scannedText);
 //		$("#ppal").load(scannedText);
-    dibujaComercio(scannedText);
+    if(flag === 0){
+      dibujaComercio(scannedText);
+    } 
 
     //Paro la camara
-    jbScanner.stopScanning();
-    setTimeout(function(){ detcode="";jbScanner.resumeScanning(); }, 3000);
+    // jbScanner.stopScanning();
+    // setTimeout(function(){ detcode="";jbScanner.resumeScanning(); }, 3000);
 	
 //    	}
     	// var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");

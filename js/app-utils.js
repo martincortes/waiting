@@ -26,7 +26,7 @@ function htmlPlato( plato ){
         <div class="col-2 col-md-2 precio align-self-center text-right rt" >
             $${ plato.precio }
         </div>
-`;
+    `;
     $("#comidas").append(contenido);
 
 }
@@ -85,10 +85,13 @@ function dibujaComercio(qr){
     // alert("Ta que te pario" + comercio + " "+ mesa);
 
     //Acá debería ir al backend a traerme los datos del comercio
-    var rta = dibujaHeaderComercio(comercio,mesa);
-    console.log(rta);
-    //dibujaMenuComercio(comercio,mesa);
+    dibujaHeaderComercio(comercio,mesa);
+    
+    dibujaMenuComercio(comercio,mesa);
 
+    $.each(menu.menuitems, function(i, item) {
+        htmlPlato(item);
+    });
 }
 
 function dibujaHeaderComercio(comercio,mesa){
@@ -109,9 +112,17 @@ function dibujaHeaderComercio(comercio,mesa){
         <img class="img-fluid img-responsive" src="img/avatars/laslilas.jpg" style="max-height:80px;">
     </div>
     </header>`;
-    console.log("BLA");
-    console.log($("#ppal", parent.document).html());
+    console.log("Actualizo header");
+    //console.log($("#ppal", parent.document).html());
     $("#ppal", parent.document).html(header);
+
+    // var jbScanner = new JsQRScanner(onQRCodeScanned);
+    
+    // jbScanner.stopScanning();
+    
+    //Ya capturé
+    flag = 1;
+    
 }
 
 function dibujaMenuComercio(comercio, mesa){
@@ -140,5 +151,8 @@ function dibujaMenuComercio(comercio, mesa){
         
     </section>
     `;
-    $("#ppal").append(menu);
+    // $("#ppal").append(menu);
+    console.log("Actualizo menu");
+    //console.log($("#ppal", parent.document).html());
+    $("#ppal", parent.document).append(menu);
 }

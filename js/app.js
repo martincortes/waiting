@@ -15,6 +15,7 @@ if ( navigator.serviceWorker ) {
 
 var totalcomanda = 0;
 var platosencomanda = new Array();
+var flag = 0;
 
 var menu = {
         "comercio": "Las Lilas",
@@ -66,12 +67,12 @@ var menu = {
 
 
 
-$.each(menu.menuitems, function(i, item) {
-    htmlPlato(item);
-});
+// $.each(menu.menuitems, function(i, item) {
+//     htmlPlato(item);
+// });
 
 $(".sumaplato").click(function(){
-    // alert("Busco "+$(this).attr("plato"));
+    alert("Busco "+$(this).attr("plato"));
     var plato = getPlato($(this).attr("plato"));
     var rta = agregaPlatoAComanda(plato.id);
     
