@@ -109,13 +109,36 @@ function dibujaHeaderComercio(comercio,mesa){
         <img class="img-fluid img-responsive" src="img/avatars/laslilas.jpg" style="max-height:80px;">
     </div>
     </header>`;
-    alert("BLA");
     console.log("BLA");
-    alert($("#ppal", parent.document).html());
-    $("#ppal").html(header);
+    console.log($("#ppal", parent.document).html());
+    $("#ppal", parent.document).html(header);
 }
 
 function dibujaMenuComercio(comercio, mesa){
 
-
+    var menu = `
+    <section class="menu row w-100">
+        <main class="col-12 col-sm-12 col-md-8 justify-content-start">
+                <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#comidas" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                    Comidas
+                </button>        
+                <div class="collapse show" id="comidas"></div>
+                <!-- <section class="footermenu" style="height: 200px; background: blue;"></section> -->
+        </main>
+        <aside class="col-12 col-sm-12 col-md-4 align-self-center justify-content-md-end">
+            
+                <div class="row bordeabajo justify-content-center rt m-2 w-100">Tu pedido actual:</div>
+                <div class="row m-2 w-100" id="comanda"></div>
+                
+                <div class="row justify-content-around w-100">
+                    <div class="col-8 text-right p-2">Total</div>
+                    <div class="col-4 text-right border-top p-2" id="totalcomanda"></div>
+                </div> 
+            
+            <div class="row w-100"><br></div>
+        </aside>
+        
+    </section>
+    `;
+    $("#ppal").append(menu);
 }

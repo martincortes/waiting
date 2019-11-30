@@ -24,28 +24,17 @@
 //		alert(scannedText);
 //		$("#ppal").load(scannedText);
     dibujaComercio(scannedText);
-		// $.ajax({
-    //         url: '/pages/menu.html',
-    //         type  : "POST",
-    //         data  : ({
-    //           ID: ID,
-    //           valor: 'EDITAMAPEO'
-    //         }),
-    //         error:function(xhr, status, errorThrown) {
-    //               console.log("ERROR");
-    //         },
-    //         success: function (data) {
-    //               //$("#ingresatt").off(\'click\');
-    //               $("#"+destino).html(data); //.fadeIn();
-    //         }
-    // });
 
+    //Paro la camara
+    jbScanner.stopScanning();
+    setTimeout(function(){ detcode="";jbScanner.resumeScanning(); }, 3000);
+	
 //    	}
-    	var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
-    	if(scannedTextMemoHist)
-    	{
-    		scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
-    	}
+    	// var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
+    	// if(scannedTextMemoHist)
+    	// {
+    	// 	scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
+    	// }
     }
     
     function provideVideo()
@@ -105,7 +94,11 @@
     	if(scannerParentElement)
     	{
     	    //append the jbScanner to an existing DOM element
-    		jbScanner.appendTo(scannerParentElement);
+        jbScanner.appendTo(scannerParentElement);
+        //Paro la camara
+        //jbScanner.stopScanning();
+        
+	
     	}        
     }
   </script>    
