@@ -76,3 +76,46 @@ function agregaPlatoAComanda(id){
 
     return respuesta;
 }
+
+function dibujaComercio(qr){
+
+    partes = qr.split('/');
+    comercio = partes[4];
+    mesa = partes[5];
+    // alert("Ta que te pario" + comercio + " "+ mesa);
+
+    //Acá debería ir al backend a traerme los datos del comercio
+    var rta = dibujaHeaderComercio(comercio,mesa);
+    console.log(rta);
+    //dibujaMenuComercio(comercio,mesa);
+
+}
+
+function dibujaHeaderComercio(comercio,mesa){
+
+    var header = `
+    <header class="row titulo pt-3">
+    <div class="col-8 col-xs-8 col-md-9 align-self-center">
+        <div class="row justify-content-start">
+            <div class="col">
+                <p class="h4 nombrecomercio">
+                    <i class="fa fa-utensils"></i>
+                    Las Lilas <small class="text-muted">Restaurant [${ comercio }] </small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 col-xs-4 col-md-3 mr-0 p-2 text-right"> <!-- imagen del restaurant-->
+        <img class="img-fluid img-responsive" src="img/avatars/laslilas.jpg" style="max-height:80px;">
+    </div>
+    </header>`;
+    alert("BLA");
+    console.log("BLA");
+    alert($("#ppal", parent.document).html());
+    $("#ppal").html(header);
+}
+
+function dibujaMenuComercio(comercio, mesa){
+
+
+}

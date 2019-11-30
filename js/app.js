@@ -10,7 +10,7 @@ if ( navigator.serviceWorker ) {
     }
 
 
-    navigator.serviceWorker.register( swLocation );
+    // navigator.serviceWorker.register( swLocation );
 }
 
 var totalcomanda = 0;
@@ -96,5 +96,10 @@ $(".sumaplato").click(function(){
     }
 });
 
+$("#soycliente").click(function(){
+
+    $("#qr").load('js/libs/plugins/qr/qr.html');
+
+});
 // $("#prueba").append("asldasd");
 // $("#prueba").append(menu.menu);
