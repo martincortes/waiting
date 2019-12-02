@@ -79,12 +79,12 @@ function agregaPlatoAComanda(id){
     return respuesta;
 }
 
-function bienvenidaComercio(qr){
+function bienvenidaComercio(comercio, mesa){
 
-    partes = qr.split('/');
-    comercio = partes[4];
-    mesa = partes[5];
-    alert("Ta que te pario" + comercio + " "+ mesa);
+    // partes = qr.split('/');
+    // comercio = partes[4];
+    // mesa = partes[5];
+    //alert("Ta que te pario" + comercio + " "+ mesa);
 
     addTodo('comercio','_comercio',comercio);
 
@@ -185,14 +185,14 @@ function dibujaMenuComercio(comercio, mesa){
     $("#ppal", parent.document).append(menu);
 }
 
-function addTodo(variable, tipo, contenido) {
+function addTodo(clave, tipo, valor) {
 
-    if(contenido.length <= 0)  return; //No guardo vacíos
+    if(valor.length <= 0)  return; //No guardo vacíos
     let mensaje = {
         _id: new Date().toISOString(),
-        variable: variable,
+        clave: clave,
         tipo: tipo,
-        contenido: contenido,
+        valor: valor,
         sincronizado: false
     };
 
@@ -200,11 +200,32 @@ function addTodo(variable, tipo, contenido) {
                 .catch( console.log );
 }
 
-function showTodos() {
-
+function inicio(){
+    
     db.allDocs({include_docs: true })
-      .then( doc => {
-        //redrawTodosUI(doc.rows);
-        console.log(doc.rows);
-      });
-  }
+    .then( docs => {
+        let bla = 0;
+        docs.rows.forEach( row => {
+            
+            console.log(row.doc._id);                    
+            console.log(row.doc.clave);                    
+            if(row.doc.clave == 'comercio'){
+                comercio = row.doc.valor;
+                console.log("Ya estoy en comercio " + comercio);
+                bienvenidaComercio(comercio,0);
+            }
+        });
+        return bla;
+    });
+    //Sigo y presento pantalla inicio cliente/restaurant
+
+}
+
+// function showTodos() {
+
+//     db.allDocs({include_docs: true })
+//       .then( doc => {
+//         //redrawTodosUI(doc.rows);
+//         console.log(doc.rows);
+//       });
+//   }

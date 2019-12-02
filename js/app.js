@@ -14,6 +14,7 @@ if ( navigator.serviceWorker ) {
 
 var db = new PouchDB('waiting');
 
+
 var totalcomanda = 0;
 var platosencomanda = new Array();
 var flag = 0;
@@ -97,7 +98,30 @@ var menu = {
 //         break;
 //     }
 // });
-showTodos();
+// showTodos();
+
+// const so = yaEstoyEnComercio().then(function(rta){
+//     alert("ASDA");
+//     alert($("#comercio").html());
+//     console.log('VALOR ',rta);
+// }).catch( err =>{
+//     console.log(err);
+// });
+// // const comercio = 
+// so.then(rta =>{
+//     alert("asdasd");
+//     alert($("#comercio").html());
+// })
+// console.log("Antes" + so);
+// //console.log('VALOR ',comercio);
+// console.log("Despues");
+
+// const comercio = yaEstoyEnComercio();
+// if(comercio){
+//     alert("Estoy en "+comercio);
+// }
+
+inicio();
 
 $("#soycliente").click(function(){
 
