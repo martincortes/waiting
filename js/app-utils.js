@@ -79,6 +79,44 @@ function agregaPlatoAComanda(id){
     return respuesta;
 }
 
+function bienvenidaGenerica(){
+
+    const html = `
+    <div class="row h-75 justify-content-center align-items-center m-0 p-0">
+    <section id="qr" class="d-flex flex-row justify-content-center p-2 flex-shrink-1" style="max-height: 30%;"></section>
+    <div class="row w-100">
+        <div class="col-1 col-sx-1 col-md-3"></div>
+        <div class="col-10 col-sx-10 col-md-6 text-center align-middle">
+                <button type="button" class="btn btn-success btn-block" style="white-space: normal;" id="soycliente">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                                <i class="fa fa-utensils fa-4x m-4"></i>
+                        </div>
+                        <div class="col-8 text-left align-self-center m-0" >
+                            <legend class="h4 m-0 align-text-bottom pb-0" style="line-height: 0.8em;">Quiero</legend>
+                            <legend class="h1 m-0 align-text-top pt-0"><strong>comer!</strong></legend>
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="btn btn-dark btn-block" style="white-space: normal;">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                                <i class="fa fa-map-marked-alt fa-2x"></i>
+                        </div>
+                        <div class="col-8 text-left align-self-center m-0" >
+                            &nbsp;Soy un <strong>restaurant</strong>
+                        </div>
+                    </div>
+                </button>
+        </div>
+        <div class="col-1 col-sx-1 col-md-3"></div>
+    </div>
+</div>
+    `;
+
+    $("#ppal").html(html);
+}
+
 function bienvenidaComercio(comercio, mesa){
 
     // partes = qr.split('/');
@@ -218,7 +256,7 @@ function inicio(){
         return bla;
     });
     //Sigo y presento pantalla inicio cliente/restaurant
-
+    bienvenidaGenerica();
 }
 
 // function showTodos() {
