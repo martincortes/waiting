@@ -84,7 +84,7 @@ function bienvenidaComercio(qr){
     partes = qr.split('/');
     comercio = partes[4];
     mesa = partes[5];
-    // alert("Ta que te pario" + comercio + " "+ mesa);
+    alert("Ta que te pario" + comercio + " "+ mesa);
 
     addTodo('comercio','_comercio',comercio);
 
@@ -199,3 +199,12 @@ function addTodo(variable, tipo, contenido) {
     db.put( mensaje ).then( console.log ('Insertado en bbdd'))
                 .catch( console.log );
 }
+
+function showTodos() {
+
+    db.allDocs({include_docs: true })
+      .then( doc => {
+        //redrawTodosUI(doc.rows);
+        console.log(doc.rows);
+      });
+  }

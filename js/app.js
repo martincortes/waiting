@@ -97,6 +97,7 @@ var menu = {
 //         break;
 //     }
 // });
+showTodos();
 
 $("#soycliente").click(function(){
 
