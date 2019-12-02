@@ -28,7 +28,7 @@ function htmlPlato( plato ){
         </div>
     `;
     $("#comidas").append(contenido);
-
+  
 }
 
 function getPlato (id){
@@ -70,7 +70,9 @@ function agregaPlatoAComanda(id){
     $("#totalcomanda").html('$'+totalcomanda.toFixed(2)+'.-');
 
     //falta el if
-    $("#aside-body").removeClass('d-none');
+    if( $("#aside-body").hasClass('d-none')){
+        $("#aside-body").removeClass('d-none');
+    }
 
     platosencomanda.push(id);
 
@@ -92,6 +94,30 @@ function dibujaComercio(qr){
     $.each(menu.menuitems, function(i, item) {
         htmlPlato(item);
     });
+    $('.sumaplato').on('click', function(){
+        var plato = getPlato($(this).attr("plato"));
+        var rta = agregaPlatoAComanda(plato.id);
+        
+        switch(rta){
+            case 'OK':
+                var mensaje = 'Plato agregado a la comanda [<b>$'+totalcomanda+'.-</b>]';
+                mdtoast(mensaje,{
+                    duration: 1000, 
+                    init: false,
+                    type: mdtoast.SUCCESS
+                });
+            break;
+            case 'EXISTE':
+                    var mensaje = 'El plato ya se encontraba en el pedido [<b>$'+totalcomanda+'.-</b>]';
+                    mdtoast(mensaje,{
+                        duration: 2000, 
+                        // interaction: true,
+                        init: false,
+                        type: mdtoast.INFO
+                    });
+            break;
+        }
+    });
 }
 
 function dibujaHeaderComercio(comercio,mesa){
@@ -103,7 +129,7 @@ function dibujaHeaderComercio(comercio,mesa){
             <div class="col">
                 <p class="h4 nombrecomercio">
                     <i class="fa fa-utensils"></i>
-                    Las Lilas <small class="text-muted">Restaurant [${ comercio }] </small>
+                    Las Lilas <small class="text-muted d-none d-md-inline  ">Restaurant [${ comercio }] </small>
                 </p>
             </div>
         </div>
@@ -137,7 +163,7 @@ function dibujaMenuComercio(comercio, mesa){
                 <!-- <section class="footermenu" style="height: 200px; background: blue;"></section> -->
         </main>
         <aside class="col-12 col-sm-12 col-md-4 align-self-center justify-content-md-end">
-            
+            <div class="row w-100 m-0 p-0 d-none" id="aside-body" >
                 <div class="row bordeabajo justify-content-center rt m-2 w-100">Tu pedido actual:</div>
                 <div class="row m-2 w-100" id="comanda"></div>
                 
@@ -145,7 +171,7 @@ function dibujaMenuComercio(comercio, mesa){
                     <div class="col-8 text-right p-2">Total</div>
                     <div class="col-4 text-right border-top p-2" id="totalcomanda"></div>
                 </div> 
-            
+            </div>
             <div class="row w-100"><br></div>
         </aside>
         

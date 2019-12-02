@@ -8,9 +8,8 @@ if ( navigator.serviceWorker ) {
     if ( url.includes('localhost') ) {
         swLocation = '/sw.js';
     }
-
-
-    // navigator.serviceWorker.register( swLocation );
+    
+    navigator.serviceWorker.register( swLocation );
 }
 
 var totalcomanda = 0;
@@ -71,7 +70,7 @@ var menu = {
 //     htmlPlato(item);
 // });
 
-$(".sumaplato").click(function(){
+$('.sumaplato').on('click', function(){
     alert("Busco "+$(this).attr("plato"));
     var plato = getPlato($(this).attr("plato"));
     var rta = agregaPlatoAComanda(plato.id);

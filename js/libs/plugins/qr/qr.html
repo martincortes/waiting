@@ -15,6 +15,7 @@
         </div>
 
 <script type="text/javascript">
+
     function onQRCodeScanned(scannedText)
     {
 //    	var scannedTextMemo = document.getElementById("scannedTextMemo");
@@ -24,7 +25,23 @@
 //		alert(scannedText);
 //		$("#ppal").load(scannedText);
     if(flag === 0){
+    
       dibujaComercio(scannedText);
+      // var m = JsQRScannerReady();
+      // m.stopScanning();
+      //  alert("YA");
+      //  alert(scannedText);
+      //  $("#scanner").html('');
+      // console.log("BLA");
+      // console.log("M "+ jbScanner.isActive() );
+      //  alert("MM "+jbScanner.isActive());
+       
+      // // console.log("sdfsd");
+      // pararCamara();
+
+      // alert("Alert después de dibujar comercio");
+      //jbScanner.stopScanning();
+      
     } 
 
     //Paro la camara
@@ -83,12 +100,13 @@
         });                
     }
     
-    //this function will be called when JsQRScanner is ready to use
+        //this function will be called when JsQRScanner is ready to use
     function JsQRScannerReady()
     {
         //create a new scanner passing to it a callback function that will be invoked when
         //the scanner succesfully scan a QR code
         var jbScanner = new JsQRScanner(onQRCodeScanned);
+        // alert(jbScanner.scannedText);
         //var jbScanner = new JsQRScanner(onQRCodeScanned, provideVideo);
         //reduce the size of analyzed image to increase performance on mobile devices
         jbScanner.setSnapImageMaxSize(300);
@@ -98,10 +116,19 @@
     	    //append the jbScanner to an existing DOM element
         jbScanner.appendTo(scannerParentElement);
         //Paro la camara
-        //jbScanner.stopScanning();
+        // jbScanner.stopScanning();
+        // alert("Paro la camara");
+        // jbScanner.resumeScanning();
         
-	
+        // return jbScanner;
     	}        
+    }
+
+    function pararCamara()
+    {
+        //var jbScanner = new JsQRScanner(onQRCodeScanned);
+        jbScanner.stopScanning();
+        alert("Paro la camara");       
     }
   </script>    
   </body>
