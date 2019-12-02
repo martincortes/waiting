@@ -27,7 +27,23 @@ function htmlPlato( plato ){
             $${ plato.precio }
         </div>
     `;
-    $("#comidas").append(contenido);
+    plato.categoria.forEach( categoria => {
+        switch(categoria){
+            case 'almuerzo':
+            case 'cena':    $("#comidas").append(contenido);
+                            break;
+            
+            case 'entrada': $("#entradas").append(contenido);
+                            break;
+            
+            case 'postre': $("#postres").append(contenido);
+                            break;
+
+            case 'bebida': $("#bebidas").append(contenido);
+                            break;
+        }
+        
+    });
   
 }
 
@@ -116,9 +132,7 @@ function bienvenidaGenerica(){
 
     $("#ppal").html(html);
     $("#soycliente").click(function(){
-
         $("#qr").load('js/libs/plugins/qr/qr.html');
-    
     });
 }
 
@@ -135,6 +149,8 @@ function bienvenidaComercio(comercio, mesa){
     dibujaHeaderComercio(comercio,mesa);
     
     dibujaMenuComercio(comercio,mesa);
+
+    dibujaFooter();
 
     $.each(menu.menuitems, function(i, item) {
         htmlPlato(item);
@@ -201,11 +217,22 @@ function dibujaMenuComercio(comercio, mesa){
     var menu = `
     <section class="menu row w-100">
         <main class="col-12 col-sm-12 col-md-8 justify-content-start">
-                <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#comidas" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                <button class="btn btn-block btn-success border-white" type="button" data-toggle="collapse" data-target="#entradas" href="#entradas" aria-expanded="false" aria-controls="entradas" >
+                    Entradas
+                </button>        
+                <div class="collapse" id="entradas"></div>
+                <button class="btn btn-block btn-success border-white active" type="button" data-toggle="collapse" data-target="#comidas" href="#comidas" aria-expanded="false" aria-controls="comidas" >
                     Comidas
                 </button>        
                 <div class="collapse show" id="comidas"></div>
-                <!-- <section class="footermenu" style="height: 200px; background: blue;"></section> -->
+                <button class="btn btn-block btn-success border-white" type="button" data-toggle="collapse" data-target="#bebidas" href="#bebidas" aria-expanded="false" aria-controls="bebidas" >
+                    Bebidas
+                </button>        
+                <div class="collapse" id="bebidas"></div>
+                <button class="btn btn-block btn-success border-white" type="button" data-toggle="collapse" data-target="#postres" href="#postres" aria-expanded="false" aria-controls="postres" >
+                    Postres
+                </button>        
+                <div class="collapse" id="postres"></div>
         </main>
         <aside class="col-12 col-sm-12 col-md-4 align-self-center justify-content-md-end">
             <div class="row w-100 m-0 p-0 d-none" id="aside-body" >
@@ -228,6 +255,43 @@ function dibujaMenuComercio(comercio, mesa){
     $("#ppal", parent.document).append(menu);
 }
 
+function dibujaFooter(){
+    const footer = `
+    <div class="row w-100 m-0 justify-content-center">
+    <div class="col-3 align-self-top text-center pt-1" >
+        <i class="fa fa-home" aria-hidden="true"></i>
+    </div>
+    <div class="col-3 align-self-top text-center pt-1">
+        <i class="fa fa-tasks" aria-hidden="true"></i>
+    </div>
+    <div class="col-3 align-self-top text-center pt-1" id="logout">
+        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+    </div>
+    </div>
+    `;
+    $("#footer").html(footer);
+    $("#logout").click(function(){
+        logoutComercio();
+    });
+
+}
+
+function footerGenerico(){
+    const footer = `
+    <div class="col-12 align-self-center">
+        <div class="row">
+            <div class="col">
+                <p class="h6 text-right pt-1">
+                    Waiting
+                    <small class="text-muted">Maitre suite.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    `;
+    $("#footer").html(footer);
+}
+
 function addTodo(clave, tipo, valor) {
 
     if(valor.length <= 0)  return; //No guardo vacíos
@@ -243,17 +307,31 @@ function addTodo(clave, tipo, valor) {
                 .catch( console.log );
 }
 
-function inicio(){
-    // alert("BLA");
-    // $("#ppal").html('');
+function logoutComercio(){
+    db.allDocs({include_docs: true })
+      .then( docs => {
+          docs.rows.forEach( row => {
 
+            if(row.doc.clave == 'comercio'){
+                row.doc.valor = 0;
+                               
+                db.put( row.doc ).then( console.log ('Comercio eliminado'))
+                 .catch( console.log );
+                
+                bienvenidaGenerica();
+                footerGenerico();
+                return true;
+            }
+          });
+      });
+}
+
+function inicio(){
+    
     db.allDocs({include_docs: true })
     .then( docs => {
         let comercio = 0;
-        docs.rows.forEach( row => {
-            
-            console.log(row.doc._id);                    
-            console.log(row.doc.clave);                    
+        docs.rows.forEach( row => {            
             if(row.doc.clave == 'comercio'){
                 comercio = row.doc.valor;
                 console.log("Ya estoy en comercio " + comercio);
@@ -268,6 +346,7 @@ function inicio(){
         }else{
             //Sigo y presento pantalla inicio cliente/restaurant
             bienvenidaGenerica();
+            footerGenerico();
         }
     });
     // bienvenidaGenerica();

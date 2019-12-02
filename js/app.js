@@ -24,7 +24,7 @@ var menu = {
         "menuitems": [ 
             {
                 id: 2344,
-                categoria: ["almuerzo", "cena"], 
+                categoria: ["almuerzo"], 
                 plato: "Pato a la naranja", 
                 ingredientes: "Pollo y hornoUn pato de 1.5 kg \
                 5 naranjas \
@@ -47,10 +47,10 @@ var menu = {
             },
             {
                 id: 65856,
-                categoria: ["postre"], 
-                plato: "Brownie",
-                ingredientes: "Dulce de leche y chocolate amargo",
-                precio: 76.5,
+                categoria: ["bebida"], 
+                plato: "Alma Mora Malbec",
+                ingredientes: "Vino tinto de origen argentino | 700ml",
+                precio: 120,
                 // imagen: file
             },
             {

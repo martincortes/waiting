@@ -29,8 +29,8 @@
 }
 
 /* .waiting{
-    background-color: #a5c05b;
-    text-shadow: #a5c05b 1px 1px 0;
+    background-color: #28a745;
+    text-shadow: #28a745 1px 1px 0;
     padding: 0.5em 0.5em !important;
     color: white;
     font-family: "Lato";
@@ -68,7 +68,7 @@ aside{
 }
 
 .sumaplato{
-    background: #a5c05b !important;
+    background: #28a745 !important;
     border: none !important;
 }
  
@@ -100,7 +100,7 @@ aside{
   display: block;
   height: 40px !important;
   width: 100%;
-  background: #a5c05b;
+  background: #28a745;
 }
 
 .menu{
@@ -109,8 +109,8 @@ aside{
 }
 
 .titulo{
-  background-color: #a5c05b;
-  text-shadow: #a5c05b 1px 1px 0;
+  background-color: #28a745;
+  text-shadow: #28a745 1px 1px 0;
   padding: 0.1em 0em !important;
   color: white;
   font-family: "Lato";
