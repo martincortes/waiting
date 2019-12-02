@@ -121,13 +121,14 @@ var menu = {
 //     alert("Estoy en "+comercio);
 // }
 
+
 inicio();
 
-$("#soycliente").click(function(){
+// $("#soycliente").click(function(){
 
-    $("#qr").load('js/libs/plugins/qr/qr.html');
+//     $("#qr").load('js/libs/plugins/qr/qr.html');
 
-});
+// });
 
 // $("#prueba").append("asldasd");
 // $("#prueba").append(menu.menu);

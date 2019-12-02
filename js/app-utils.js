@@ -115,6 +115,11 @@ function bienvenidaGenerica(){
     `;
 
     $("#ppal").html(html);
+    $("#soycliente").click(function(){
+
+        $("#qr").load('js/libs/plugins/qr/qr.html');
+    
+    });
 }
 
 function bienvenidaComercio(comercio, mesa){
@@ -239,10 +244,12 @@ function addTodo(clave, tipo, valor) {
 }
 
 function inicio(){
-    
+    // alert("BLA");
+    // $("#ppal").html('');
+
     db.allDocs({include_docs: true })
     .then( docs => {
-        let bla = 0;
+        let comercio = 0;
         docs.rows.forEach( row => {
             
             console.log(row.doc._id);                    
@@ -250,13 +257,20 @@ function inicio(){
             if(row.doc.clave == 'comercio'){
                 comercio = row.doc.valor;
                 console.log("Ya estoy en comercio " + comercio);
-                bienvenidaComercio(comercio,0);
+                //bienvenidaComercio(comercio,0);
+                return comercio;
             }
         });
-        return bla;
+        return comercio;
+    }).then( comercio => {
+        if(comercio){
+            bienvenidaComercio(comercio);
+        }else{
+            //Sigo y presento pantalla inicio cliente/restaurant
+            bienvenidaGenerica();
+        }
     });
-    //Sigo y presento pantalla inicio cliente/restaurant
-    bienvenidaGenerica();
+    // bienvenidaGenerica();
 }
 
 // function showTodos() {
