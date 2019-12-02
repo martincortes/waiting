@@ -6,11 +6,13 @@ if ( navigator.serviceWorker ) {
 
 
     if ( url.includes('localhost') ) {
-        swLocation = '/sw.js';
+        swLocation = '/waiting/sw.js';
     }
-    
+
     navigator.serviceWorker.register( swLocation );
 }
+
+var db = new PouchDB('waiting');
 
 var totalcomanda = 0;
 var platosencomanda = new Array();
@@ -70,36 +72,37 @@ var menu = {
 //     htmlPlato(item);
 // });
 
-$('.sumaplato').on('click', function(){
-    alert("Busco "+$(this).attr("plato"));
-    var plato = getPlato($(this).attr("plato"));
-    var rta = agregaPlatoAComanda(plato.id);
+// $('.sumaplato').on('click', function(){
+//     alert("Busco "+$(this).attr("plato"));
+//     var plato = getPlato($(this).attr("plato"));
+//     var rta = agregaPlatoAComanda(plato.id);
     
-    switch(rta){
-        case 'OK':
-            var mensaje = 'Plato agregado a la comanda [<b>$'+totalcomanda+'.-</b>]';
-            mdtoast(mensaje,{
-                duration: 1000, 
-                init: false,
-                type: mdtoast.SUCCESS
-            });
-        break;
-        case 'EXISTE':
-                var mensaje = 'El plato fue agregado por segunda vez [<b>$'+totalcomanda+'.-</b>]';
-                mdtoast(mensaje,{
-                    duration: 2000, 
-                    // interaction: true,
-                    init: false,
-                    type: mdtoast.INFO
-                });
-        break;
-    }
-});
+//     switch(rta){
+//         case 'OK':
+//             var mensaje = 'Plato agregado a la comanda [<b>$'+totalcomanda+'.-</b>]';
+//             mdtoast(mensaje,{
+//                 duration: 1000, 
+//                 init: false,
+//                 type: mdtoast.SUCCESS
+//             });
+//         break;
+//         case 'EXISTE':
+//                 var mensaje = 'El plato fue agregado por segunda vez [<b>$'+totalcomanda+'.-</b>]';
+//                 mdtoast(mensaje,{
+//                     duration: 2000, 
+//                     // interaction: true,
+//                     init: false,
+//                     type: mdtoast.INFO
+//                 });
+//         break;
+//     }
+// });
 
 $("#soycliente").click(function(){
 
     $("#qr").load('js/libs/plugins/qr/qr.html');
 
 });
+
 // $("#prueba").append("asldasd");
 // $("#prueba").append(menu.menu);

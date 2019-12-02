@@ -79,12 +79,14 @@ function agregaPlatoAComanda(id){
     return respuesta;
 }
 
-function dibujaComercio(qr){
+function bienvenidaComercio(qr){
 
     partes = qr.split('/');
     comercio = partes[4];
     mesa = partes[5];
     // alert("Ta que te pario" + comercio + " "+ mesa);
+
+    addTodo('comercio','_comercio',comercio);
 
     //Acá debería ir al backend a traerme los datos del comercio
     dibujaHeaderComercio(comercio,mesa);
@@ -135,7 +137,7 @@ function dibujaHeaderComercio(comercio,mesa){
         </div>
     </div>
     <div class="col-4 col-xs-4 col-md-3 mr-0 p-2 text-right"> <!-- imagen del restaurant-->
-        <img class="img-fluid img-responsive" src="img/avatars/laslilas.jpg" style="max-height:80px;">
+        <img class="img-fluid img-responsive img-thumbnail" src="img/avatars/laslilas.jpg" style="max-height:80px;">
     </div>
     </header>`;
     console.log("Actualizo header");
@@ -181,4 +183,19 @@ function dibujaMenuComercio(comercio, mesa){
     console.log("Actualizo menu");
     //console.log($("#ppal", parent.document).html());
     $("#ppal", parent.document).append(menu);
+}
+
+function addTodo(variable, tipo, contenido) {
+
+    if(contenido.length <= 0)  return; //No guardo vacíos
+    let mensaje = {
+        _id: new Date().toISOString(),
+        variable: variable,
+        tipo: tipo,
+        contenido: contenido,
+        sincronizado: false
+    };
+
+    db.put( mensaje ).then( console.log ('Insertado en bbdd'))
+                .catch( console.log );
 }

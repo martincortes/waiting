@@ -16,7 +16,8 @@ const APP_SHELL = [
     'js/app-utils.js',
     'js/sw-utils.js',
     'js/libs/plugins/mdtoast.min.css',
-    'js/libs/plugins/mdtoast.min.js'
+    'js/libs/plugins/mdtoast.min.js',
+
 ];
 
 const APP_SHELL_INMUTABLE = [
@@ -24,7 +25,8 @@ const APP_SHELL_INMUTABLE = [
     'https://fonts.googleapis.com/css?family=Lato:400,300',
     'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
     'css/animate.css',
-    'js/libs/jquery.js'
+    'js/libs/jquery.js',
+    'js/pouchdb.min.js'
 ];
 
 
