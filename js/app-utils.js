@@ -143,7 +143,7 @@ function bienvenidaComercio(comercio, mesa){
     // mesa = partes[5];
     //alert("Ta que te pario" + comercio + " "+ mesa);
 
-    addTodo('comercio','_comercio',comercio);
+    addTodo('comercio','_comercio',comercio+'@'+mesa);
 
     //Acá debería ir al backend a traerme los datos del comercio
     dibujaHeaderComercio(comercio,mesa);
@@ -155,6 +155,7 @@ function bienvenidaComercio(comercio, mesa){
     $.each(menu.menuitems, function(i, item) {
         htmlPlato(item);
     });
+
     $('.sumaplato').on('click', function(){
         var plato = getPlato($(this).attr("plato"));
         var rta = agregaPlatoAComanda(plato.id);
@@ -221,7 +222,7 @@ function dibujaMenuComercio(comercio, mesa){
                     Entradas
                 </button>        
                 <div class="collapse" id="entradas"></div>
-                <button class="btn btn-block btn-success border-white active" type="button" data-toggle="collapse" data-target="#comidas" href="#comidas" aria-expanded="false" aria-controls="comidas" >
+                <button class="btn btn-block btn-success border-white" type="button" data-toggle="collapse" data-target="#comidas" href="#comidas" aria-expanded="false" aria-controls="comidas" >
                     Comidas
                 </button>        
                 <div class="collapse show" id="comidas"></div>
@@ -342,14 +343,61 @@ function inicio(){
         return comercio;
     }).then( comercio => {
         if(comercio){
-            bienvenidaComercio(comercio);
+            bienvenidaComercio(comercio.split('@')[0], comercio.split('@')[1]);
         }else{
-            //Sigo y presento pantalla inicio cliente/restaurant
-            bienvenidaGenerica();
-            footerGenerico();
+            //Me fijo si viene la url desde la camara para abrir en navegador
+            if(tmp = reciboURLDesdeNavegador()){
+
+                bienvenidaComercio(tmp.split('@')[0], tmp.split('@')[1]);
+
+            }else{
+                //Sigo y presento pantalla inicio cliente/restaurant
+                bienvenidaGenerica();
+                footerGenerico();
+            }
+
         }
     });
     // bienvenidaGenerica();
+}
+
+function reciboURLDesdeNavegador(){
+
+    const url = window.location.href;
+    console.log("URL ", url);
+    var hash = url.split('?')[1];
+    console.log("HASH", hash);
+    //ZWAIT_@_123_@_4
+    hash = 'c4a09099ebf7f6aadf8a52fc14d7bc46';
+
+    const maxID = 999;
+    const maxMesa = 10;
+
+    for(i=1;i<maxID;i++){
+        id = completaCeros(i,maxID.toString().length);
+        tmp = 'ZWAIT_@_'+id+'_@_';
+        // console.log("VOy en "+tmp);
+        for(m=1;m<maxMesa;m++){
+            //mesa = completaCeros(m,maxMesa.toString().length);
+            tmpm = tmp+m;
+            hashtmp = md5(tmpm);
+            // console.log("Con "+tmpm);
+            // console.log("Comparo "+hashtmp+" con "+hash);
+            if(hashtmp == hash){
+                console.log("Recibo comercio "+id+" mesa "+m);
+                return id+'@'+m;
+            }
+        }
+        
+    }
+    return false;
+}
+
+function completaCeros(n, largo){
+    while(n.toString().length < largo){
+        n = '0'+n;
+    }
+    return n;   
 }
 
 // function showTodos() {
