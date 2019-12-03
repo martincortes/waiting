@@ -368,7 +368,7 @@ function reciboURLDesdeNavegador(){
     var hash = url.split('?')[1];
     console.log("HASH", hash);
     //ZWAIT_@_123_@_4
-    hash = 'c4a09099ebf7f6aadf8a52fc14d7bc46';
+    // hash = 'c4a09099ebf7f6aadf8a52fc14d7bc46';
 
     const maxID = 999;
     const maxMesa = 10;
@@ -376,13 +376,9 @@ function reciboURLDesdeNavegador(){
     for(i=1;i<maxID;i++){
         id = completaCeros(i,maxID.toString().length);
         tmp = 'ZWAIT_@_'+id+'_@_';
-        // console.log("VOy en "+tmp);
         for(m=1;m<maxMesa;m++){
-            //mesa = completaCeros(m,maxMesa.toString().length);
             tmpm = tmp+m;
             hashtmp = md5(tmpm);
-            // console.log("Con "+tmpm);
-            // console.log("Comparo "+hashtmp+" con "+hash);
             if(hashtmp == hash){
                 console.log("Recibo comercio "+id+" mesa "+m);
                 return id+'@'+m;
