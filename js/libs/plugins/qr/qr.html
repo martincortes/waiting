@@ -25,24 +25,13 @@
 //		alert(scannedText);
 //		$("#ppal").load(scannedText);
     if(flag === 0){
-      partes = scannedText.split('/');
-      comercio = partes[4];
-      mesa = partes[5];
-      bienvenidaComercio(comercio, mesa);
-      // var m = JsQRScannerReady();
-      // m.stopScanning();
-      //  alert("YA");
-      //  alert(scannedText);
-      //  $("#scanner").html('');
-      // console.log("BLA");
-      // console.log("M "+ jbScanner.isActive() );
-      //  alert("MM "+jbScanner.isActive());
-       
-      // // console.log("sdfsd");
-      // pararCamara();
+      var tmp = reciboURLDesdeNavegador();
+      bienvenidaComercio(tmp.split('@')[0], tmp.split('@')[1]);
+      // partes = scannedText.split('/');
+      // comercio = partes[4];
+      // mesa = partes[5];
+      // bienvenidaComercio(comercio, mesa);
 
-      // alert("Alert después de dibujar comercio");
-      //jbScanner.stopScanning();
       
     } 
 

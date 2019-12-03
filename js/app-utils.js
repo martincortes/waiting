@@ -99,7 +99,7 @@ function bienvenidaGenerica(){
 
     const html = `
     <div class="row h-75 justify-content-center align-items-center m-0 p-0">
-    <section id="qr" class="d-flex flex-row justify-content-center p-2" style="max-width: 50%; max-height:40%;"></section>
+    <!-- <section id="qr" class="d-flex flex-row justify-content-center p-2" style="max-width: 50%; max-height:40%;"></section> -->
     <div class="row w-100">
         <div class="col-1 col-sx-1 col-md-3"></div>
         <div class="col-10 col-sx-10 col-md-6 text-center align-middle">
@@ -127,26 +127,22 @@ function bienvenidaGenerica(){
         </div>
         <div class="col-1 col-sx-1 col-md-3"></div>
     </div>
-
-
-<div id="elModal" class="hide fade" style="z-index:9999; position:absolute; top:0px;">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">×</button>
-                <h3>Title</h3>
-        </div>
-        <div class="modal-body" id="modalQR">
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal">OK</button>
-        </div>
-    </div>
-  </div>
 </div>
 
+    <div id="elModal" class="hide fade" style="z-index:9999; position:absolute; top:0px;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Scanner de QR</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body" id="modalQR">
+            </div>
+        </div>
+    </div>
+    </div>
 
-</div>    
+    
     `;
 
     $("#ppal").html(html);
