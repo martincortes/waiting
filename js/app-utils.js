@@ -131,14 +131,13 @@ function bienvenidaGenerica(){
 
     <div id="elModal" class="hide fade" style="z-index:9999; position:absolute; top:0px;">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Scanner de QR</h4>
-                <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <div class="modal-body" id="modalQR">
+        <div class="modal-content bg-dark">
+            <div class="modal-body bg-dark" id="modalQR" style="max-height:70%; max-width:80%; margin-left:15%;">
             </div>
         </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+      </div>
     </div>
     </div>
 
