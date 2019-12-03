@@ -99,7 +99,7 @@ function bienvenidaGenerica(){
 
     const html = `
     <div class="row h-75 justify-content-center align-items-center m-0 p-0">
-    <section id="qr" class="d-flex flex-row justify-content-center p-2 flex-shrink-1" style="max-height: 30%;"></section>
+    <section id="qr" class="d-flex flex-row justify-content-center p-2" style="max-width: 50%;"></section>
     <div class="row w-100">
         <div class="col-1 col-sx-1 col-md-3"></div>
         <div class="col-10 col-sx-10 col-md-6 text-center align-middle">
