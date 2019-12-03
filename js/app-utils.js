@@ -135,8 +135,9 @@ function bienvenidaGenerica(){
             <div class="modal-body bg-dark" id="modalQR" style="max-height:70%; max-width:80%; margin-left:15%;">
             </div>
         </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+        <div class="modal-footer border-top-0" >
+            <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+        </div>
       </div>
     </div>
     </div>
