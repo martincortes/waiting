@@ -138,7 +138,6 @@ function bienvenidaGenerica(){
         <div class="modal-footer border-top-0" >
             <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
         </div>
-      </div>
     </div>
     </div>
 
