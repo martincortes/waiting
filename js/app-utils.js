@@ -239,7 +239,7 @@ function dibujaHeaderComercio(comercio,mesa){
 function dibujaMenuComercio(comercio, mesa){
 
     var menu = `
-    <section class="menu row w-100">
+    <section class="menu row w-100 h-auto">
         <main class="col-12 col-sm-12 col-md-8 justify-content-start">
                 <button class="btn btn-block btn-secondary border-dark" type="button" data-toggle="collapse" data-target="#entradas" href="#entradas" aria-expanded="false" aria-controls="entradas" >
                     Entradas
@@ -265,7 +265,7 @@ function dibujaMenuComercio(comercio, mesa){
                 
                 <div class="row justify-content-around w-100">
                     <div class="col-6 text-center p-1 justify-content-center">
-                        <button class="btn btn-outline-warning">Confirmar</button>
+                        <button class="btn btn-outline-warning p-1">Confirmar</button>
                     </div>
                     <div class="col-3 text-right p-2">Total</div>
                     <div class="col-3 text-right border-top p-2" id="totalcomanda"></div>

@@ -14,8 +14,8 @@
     margin: 0px !important;
     color: #7ba4ab;
     font-size: 16px;
-    background-color: #DDDEDE; 
-    background: #DDDEDE;
+    background-color: #343a40; 
+    background: #343a40;
     width: 100%;
     height: 100%;
 
@@ -59,9 +59,9 @@ aside{
     padding: 1% 0%;
 }
 
-.bordeabajo{
+/* .bordeabajo{
     border-bottom: 1px solid #7ba4ab;
-}
+} */
 
 .nombreplato{
     font-size: 3.2vh;
