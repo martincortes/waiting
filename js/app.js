@@ -23,6 +23,15 @@ var menu = {
         "comercio": "Las Lilas",
         "menuitems": [ 
             {
+                id: 2345,
+                categoria: ["almuerzo"], 
+                plato: "Pulpo a las brasas", 
+                ingredientes: "Pulpo de exportaci&oacute;n de 400grs \
+                acompañado de vegetales asados de la huerta.", 
+                precio: 115, 
+                // imagen: file
+            },
+            {
                 id: 2344,
                 categoria: ["almuerzo"], 
                 plato: "Pato a la naranja", 
