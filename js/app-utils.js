@@ -73,7 +73,7 @@ function agregaPlatoAComanda(id){
     var contenido = `
     <div class="platoencomanda text-white row w-100 justify-content-center m-0 p-0 rt">
         <div class="col-1 col-md-0 m-0 p-0"></div>
-        <div class="col-8 col-md-8 pr-2" id="plato${ plato.id }">
+        <div class="col-8 col-md-8 pr-2" id="platocomanda${ plato.id }">
         ${ plato.plato }
         </div>
         <div class="col-3 col-md-3 precio align-self-center text-center m-0 p-0 rt">
