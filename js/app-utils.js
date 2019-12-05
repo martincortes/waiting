@@ -104,7 +104,7 @@ function bienvenidaGenerica(){
         <div class="col-10 col-sx-10 col-md-6 justify-content-center align-middle align-self-center">
             <div class="row w-100" >
                 <div class="card d-flex flex-column img-fluid shadow p-1 mb-1 bg-dark rounded" style="width:500px" id="soycliente">
-                    <img class="card-img-top border border-secondary " src="img/avatars/fondocard.jpg" alt="Card image" style="width:100%">
+                    <img class="card-img-top border border-secondary " src="img/avatars/fondocard_sd.jpg" alt="Card image" style="width:100%">
                     <div class="card-img-overlay h-100 d-flex flex-column justify-content-end m-0">
                         <p style="line-height:10px;" class="text-white text-right m-0">
                         <span style="font-size:1.5em;" class="gv rt"> Waiting.</span>
