@@ -98,11 +98,10 @@ function agregaPlatoAComanda(id){
 function bienvenidaGenerica(){
 
     const html = `
-    <div class="row h-100 justify-content-center align-items-center m-0 p-0">
-    <!-- <section id="qr" class="d-flex flex-row justify-content-center p-2" style="max-width: 50%; max-height:40%;"></section> -->
-    <div class="row w-100 justify-content-center ">
+    <div class="row h-100 justify-content-center align-self-center m-0 p-0">
+    <div class="row w-100 justify-content-center align-self-center h-100">
         <div class="col-1 col-sx-1 col-md-3"></div>
-        <div class="col-10 col-sx-10 col-md-6 justify-content-center align-middle">
+        <div class="col-10 col-sx-10 col-md-6 justify-content-center align-middle align-self-center">
             <div class="row w-100" >
                 <div class="card d-flex flex-column img-fluid shadow p-1 mb-1 bg-dark rounded" style="width:500px" id="soycliente">
                     <img class="card-img-top border border-secondary " src="img/avatars/fondocard.jpg" alt="Card image" style="width:100%">
