@@ -24,19 +24,30 @@
 //    		scannedTextMemo.value = scannedText;
 //		alert(scannedText);
 //		$("#ppal").load(scannedText);
-    if(flag === 0){
+    // console.log("FLAG "+flag);
+    // console.log("ST 1 "+scannedText);
+    // console.log("Flag "+flag);
+    if(flag === 1){
       var tmp = reciboURLDesdeNavegador();
+      if(!tmp){
+        console.log("VOY POR QR "+scannedText);
+        tmp = reciboURLDesdeNavegador(scannedText);
+        console.log("Vuelvo con "+tmp);
+      }
+      console.log("TMP "+tmp);
       bienvenidaComercio(tmp.split('@')[0], tmp.split('@')[1]);
       // partes = scannedText.split('/');
       // comercio = partes[4];
       // mesa = partes[5];
       // bienvenidaComercio(comercio, mesa);
-
-      
+      // scannedText = '';
+      // console.log("ST 2 "+scannedText);
+      // jbScanner.stopScanning();
+      // $("#scanner").remove();
     } 
 
     //Paro la camara
-    // jbScanner.stopScanning();
+    jbScanner.stopScanning();
     // setTimeout(function(){ detcode="";jbScanner.resumeScanning(); }, 3000);
 	
 //    	}
@@ -96,7 +107,10 @@
     {
         //create a new scanner passing to it a callback function that will be invoked when
         //the scanner succesfully scan a QR code
-        var jbScanner = new JsQRScanner(onQRCodeScanned);
+        if(flag === 0){
+          var jbScanner = new JsQRScanner(onQRCodeScanned);
+          flag = 1;
+        }
         // alert(jbScanner.scannedText);
         //var jbScanner = new JsQRScanner(onQRCodeScanned, provideVideo);
         //reduce the size of analyzed image to increase performance on mobile devices

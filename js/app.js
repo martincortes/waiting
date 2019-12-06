@@ -20,7 +20,8 @@ var platosencomanda = new Array();
 var flag = 0;
 
 var menu = {
-        "comercio": "Las Lilas",
+        "comercio": "Le Fonde",
+        "tipo": "Fonda",
         "menuitems": [ 
             {
                 id: 2345,
@@ -74,70 +75,5 @@ var menu = {
         ]
 };
 
-
-
-
-
-// $.each(menu.menuitems, function(i, item) {
-//     htmlPlato(item);
-// });
-
-// $('.sumaplato').on('click', function(){
-//     alert("Busco "+$(this).attr("plato"));
-//     var plato = getPlato($(this).attr("plato"));
-//     var rta = agregaPlatoAComanda(plato.id);
-    
-//     switch(rta){
-//         case 'OK':
-//             var mensaje = 'Plato agregado a la comanda [<b>$'+totalcomanda+'.-</b>]';
-//             mdtoast(mensaje,{
-//                 duration: 1000, 
-//                 init: false,
-//                 type: mdtoast.SUCCESS
-//             });
-//         break;
-//         case 'EXISTE':
-//                 var mensaje = 'El plato fue agregado por segunda vez [<b>$'+totalcomanda+'.-</b>]';
-//                 mdtoast(mensaje,{
-//                     duration: 2000, 
-//                     // interaction: true,
-//                     init: false,
-//                     type: mdtoast.INFO
-//                 });
-//         break;
-//     }
-// });
-// showTodos();
-
-// const so = yaEstoyEnComercio().then(function(rta){
-//     alert("ASDA");
-//     alert($("#comercio").html());
-//     console.log('VALOR ',rta);
-// }).catch( err =>{
-//     console.log(err);
-// });
-// // const comercio = 
-// so.then(rta =>{
-//     alert("asdasd");
-//     alert($("#comercio").html());
-// })
-// console.log("Antes" + so);
-// //console.log('VALOR ',comercio);
-// console.log("Despues");
-
-// const comercio = yaEstoyEnComercio();
-// if(comercio){
-//     alert("Estoy en "+comercio);
-// }
-
-
 inicio();
 
-// $("#soycliente").click(function(){
-
-//     $("#qr").load('js/libs/plugins/qr/qr.html');
-
-// });
-
-// $("#prueba").append("asldasd");
-// $("#prueba").append(menu.menu);

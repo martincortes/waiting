@@ -1,8 +1,8 @@
 {
     "short_name": "Waiting",
-    "name": "Waiting - Maitre suite",
+    "name": "Waiting",
     "start_url": "index.html",
-    "background_color": "#343a40",
+    "background_color": "#000000",
     "theme_color": "#343a40",
     "display": "standalone",
     "orientation": "portrait",
